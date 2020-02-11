@@ -1,0 +1,41 @@
+## Chapter Lessons
+
+* Pause with your brush off the page
+  -  When you're thinking, be in normal mode
+
+* Chunk your undos
+  - This also chunks your re-dos (`.`)
+
+* Compose repeatable changes
+  - Think of an operation that can be generalized, make it specific
+
+* Use counts to do simple arithmetic
+  - <C-x> and <C-a> exist
+
+* Don't count if you can repeat
+  - It's less of a cognitive load to do a chunked operation and repeat w/ `.` a bunch of times, instead of counting the number of deletions you want to do e.g. `3daw` cs `daw . .`
+
+* Combine and Conquer
+  - :h operator
+  - There's a notion of an operator-pending mode, which is a part of the state-machine that accepts only motions
+  - `ap` is a motion that refers to the current paragraph
+  - motions are apprently distinct from command characters(I'm really thinking of operators here)
+  - when an operator command is invoked in duplicate, it acts upon the current line
+  - to create your own custom operator, see `:h map-operator`
+  - to create your own custom motions, see `:h omap-info`
+  - A bunch of hidden commands exist that are invooked by two or more keystrokes
+
+# Highlights of the chapter
+*:s/a/b/g == :substitute/a/b/g -- only applies on the current line, `&` repeats it (and I think the previous command)
+* `daw` = delete "a word" (see :h aw), deletes the currently selected word. aw is a text object that we can use instead of a motion, also deletes a whitespace character. It truly wins the "vim-way best" because the intent is translated into the `.` operator
+* <C-a> and <C-x> perform addition and subtraction on numbers (the number under your cursor)
+    * This can be combined with te count modifier to add and subtract from the current number
+    * This also works with hex, octal and binary!!!
+    * only if notated with 0x, 0, and 0b prefixes
+
+* `dap` deletes a paragraph
+* `gu` and `gU` lower and upper-casify the selection/motion
+    - `gUU` applies to current line, which is shorthand for `gUgU` (a repeated operator)
+* g is really a prefix that modifies the behavior of the subsequent keystrokes
+
+* Also, consider remapping the caps lock key

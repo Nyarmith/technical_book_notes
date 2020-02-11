@@ -1,0 +1,33 @@
+## Chapter Lessons
+
+* You can use the search commands in visual mode
+
+* also check out this weird thing `:h Select-mode`
+  - Not at all useful
+
+* selection motions like `aw` and `ap` seem to work in visual mode
+
+* vim has three kinds of visual mode (they're technically sub-modes)
+  - character-wise visual mode (v)
+  - line-wise visual mode (V)
+  - block-wise visual mode (C-v)
+  - you can switch between these while in visual-mode with the same keys
+
+* gv reselects the last visual selection
+  - <C-[> also gets you out of visual mode, similar to insert mode (in lieu of Esc)
+
+* o = go to other end of highlighted text
+
+* Remember, you can re-do visual selection operations with . like anything else
+  - especially useful for selective formatting
+
+* Prefer operators to visual commands where possible
+  - This is because it doesn't play as well with the dot command (and thus general scriptability)
+  - Visual selection doesn't repeat the motion per-se, it repeats the exact character-length selection done by the first motion and applies that exact selection to all further repetitions; the motion's meaning is lost
+
+* With a selection, you can set its contents to upper or lower-case with `vU` and `vu`
+  - Recall, these have a normal-mode equivalent in the form of `gU` and `gu`
+
+## Chapter Highlights
+* you can use o while selecting things in visual mode to swap the cursor to the other end!
+* `it` is a motion that selects the inner tag of someting (e.g. in an xml tag)

@@ -1,0 +1,40 @@
+## Chapter Lessons
+
+* Insert-Mode has a few editing short-cuts
+  - <C-w> deletes back one word, <C-u> deletes to the start of the line
+  - <C-u> deletes back one char, but idk how that's more useful than backspace
+  - <C-[> switches to normal mode, which may be faster than hitting esc
+  - <C-o> switches to _insert normal mode_ , which executes only one command (gives us only one bullet)
+
+* You can paste from a register without leaving insert mode
+  - <C-r> followed by the register pastes from insert-mode
+  - `<C-r><C-p>{register}` inserts text literally and fixes any unintended indentation
+
+* Do back-of-the-envelope calculations in place
+  - The _expression register_ allows to perform calculations then insert the result into the doc
+  - From insert mode, you can access it by typing <C-r>=, which opens a prompt to put your expression in
+
+* Inserting unicode with character-codes
+  - You can tell vim to insert a character by-code in insert-mode with <C-v>{code}
+  - {code} can be a regular decimal for ascii, or a number starting with u{code} for unicode
+  - You can get the numeric code of the character under the cursor with ga `:h ga`
+  - <C-v> also inserts characters literally, so <C-v><Tab> always inserts a tab regardless of 'expandtab'
+  - <C-k> is intuitive because it lets you insert a weird character like ñ by digraph, in that case it was <C-k>n~ `:digraphs`
+
+* Inserting by digraps
+  - <C-k>?I = ¿
+  - `:digraphs` or `:dig`
+  - more useful maybe `:h digraph-table`
+
+* Use replace-mode
+  - Replace-mode is like notepad's insert-mode that repalces as you type
+  - Replace mode starts with the "R" command
+  - the insert key toggles between replace and insert mode
+  - Cool, I was looking for this
+  - Virtual replace mode gR treats tabs as if they consisted of spaces (for convenience if you don't like the rapid line change)
+
+
+## Highlights of the chapter
+- There are secret insert-mode commands
+- Replace mode exists
+- On-the-envelope math and pasting

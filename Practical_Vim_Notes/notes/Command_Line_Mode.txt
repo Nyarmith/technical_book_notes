@@ -1,0 +1,5 @@
+## Capter Lessons
+
+* The commands we run on the command-line are called _Ex commands_
+
+# Highlights of the Chapter
